@@ -1,1 +1,1 @@
-# rsschool-landing-page
+https://irinabukley-f4.github.io/rsschool-landing-page
