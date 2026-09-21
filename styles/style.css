@@ -1,0 +1,25 @@
+:root {
+	--text-primary: #403f3d;
+	--text-inverse: #e1d4c9;
+	--text-accent: #b0907a;
+	--background-page: #e1d4c9;
+	--background-container: #665f55;
+	--background-overlay: rgba(64, 63, 61, 0.8);
+	--border-primary: #c1b6ad;
+	--border-inverse: #665f55;
+	--text-primary: #403f3d;
+	--dark-text-primary: #e1d4c9;
+	--dark-text-inverse: #e1d4c9;
+	--dark-text-accent: #b0907a;
+	--dark-bg-page: #292826;
+	--dark-bg-container: #403f3d;
+	--dark-bg-overlay: rgba(41, 40, 38, 0.8);
+	--dark-border-primary: #665f55;
+	--dark-border-inverse: #c1b6ad;
+	--background-modal: #e1d4c9;
+	--background-modalcontrol: #665f55;
+	--dark-bg-modal: var(--dark-bg-container);
+    --dark-bg-modal-control: var(--dark-bg-page);
+    --font-family: "Inter", sans-serif;
+    --second-family: "Manrope", sans-serif;
+}
