@@ -1,0 +1,94 @@
+.header {
+    padding: 20px 0;
+    .container {
+        display: flex;
+        justify-content: space-between;
+    }
+    .menu {
+        ul {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            font-family: var(--font-family);
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 150%;
+            li {
+                a {
+                    color: var(--text-primary);
+                }
+            }
+        }
+    }
+    .actions {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 24px;
+        .actions__color {
+            display: flex;
+            gap: 8px;
+            border: 1px solid var(--border-primary);
+            border-radius: 100px;
+            padding: 4px;
+        }
+        .actions__color-theme {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .actions__color-theme.active {
+            border-radius: 100px;
+            background-color: var(--text-accent);
+        }
+        button {
+            background-color: transparent;
+            border: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            span {
+                margin-top: 3px;
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 150%;
+                color: var(--text-primary);
+            }
+        }
+    }
+    .burger {
+        display: none;
+    }
+}
+@media (max-width: 850px) {
+    .header {
+        .actions {
+            button {
+                display: none;
+            }
+        }
+        .menu {
+            display: none;
+        }
+        .burger {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid var(--background-container);
+            border-radius: 100px;
+            width: 44px;
+            height: 44px;
+            span {
+                width: 18px;
+                height: 2px;
+                background-color: var(--background-container);
+            }
+        }
+    }
+}

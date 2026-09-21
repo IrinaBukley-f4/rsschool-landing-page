@@ -1,3 +1,19 @@
+@import './header.css';
+@import './hero.css';
+@import './slider.css';
+@import './about.css';
+@import './app.css';
+@import './footer.css';
+@import './coffee.css';
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	text-decoration: none;
+}
+
 :root {
 	--text-primary: #403f3d;
 	--text-inverse: #e1d4c9;
@@ -22,4 +38,29 @@
     --dark-bg-modal-control: var(--dark-bg-page);
     --font-family: "Inter", sans-serif;
     --second-family: "Manrope", sans-serif;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background-color: var(--text-inverse);
+}
+
+.container {
+	/* max-width: 1360px; */
+	max-width: clamp(688px, 95vw, 1360px);
+	margin: 0 auto;
+}
+@media (max-width: 850px) {
+	.container {
+		/* max-width: 688px; */
+		max-width: clamp(348px, 95vw, 688px);
+	}
+}
+@media (max-width: 380px) {
+	.container {
+		max-width: 348px;
+	}
 }
