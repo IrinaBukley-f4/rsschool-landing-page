@@ -39,14 +39,32 @@
     --font-family: "Inter", sans-serif;
     --second-family: "Manrope", sans-serif;
 }
+body.dark {
+    --text-primary: #e1d4c9;              
+    --text-inverse: #403f3d;             
+    --text-accent: #b0907a;              
+
+    --background-page: #292826;          
+    --background-container: #403f3d;     
+    --background-overlay: rgba(41, 40, 38, 0.8);
+
+    --border-primary: #665f55;          
+    --border-inverse: #c1b6ad;
+}
+
+body {
+    background-color: var(--background-page);  
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
 
 html {
 	scroll-behavior: smooth;
 }
 
-body {
+/* body {
 	background-color: var(--text-inverse);
-}
+} */
 
 .container {
 	max-width: clamp(688px, 95vw, 1360px);

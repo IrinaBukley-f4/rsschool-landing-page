@@ -3,7 +3,8 @@
     margin: 100px auto 40px;
     border-radius: 40px;
     padding: 100px;
-    background: var(--background-container);
+      background: var(--background-container);
+    transition: background-color 0.3s ease;
     .container {
         display: flex;
         gap: 80px;
@@ -54,6 +55,7 @@
         font-family: var(--font-family);
         line-height: 125%;
         color: var(--text-inverse);
+        transition: color 0.3s ease;
     }
     .footer__contact-links {
         margin-top: 40px;
@@ -64,6 +66,7 @@
             font-family: var(--font-family);
             line-height: 150%;
             color: var(--text-inverse);
+            transition: color 0.3s ease;
             a {
                  position: relative;             
                 display: inline-flex;            
@@ -74,7 +77,7 @@
                 font-family: var(--font-family);
                 line-height: 150%;
                 color: var(--text-inverse);
-
+                transition: color 0.3s ease;
                 &::after {
                     content: "";
                     position: absolute;
@@ -96,6 +99,12 @@
                 margin-right: 8px;
             }
         }
+    }
+    .footer__title,
+    .footer__contact-title,
+    .footer__contact-links li,
+    .footer__contact-links li a {
+        color: #e1d4c9;
     }
 }
 @media (max-width: 1415px) {
