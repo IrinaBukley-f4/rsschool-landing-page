@@ -72,6 +72,21 @@
         display: flex;
         justify-content: center;
         align-items: center;
+         cursor: pointer;
+        background-color: transparent;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+    .slider__arrow img {
+        transition: filter 0.3s ease;
+    }
+
+    .slider__arrow:hover {
+        background-color: var(--background-container);
+        border-color: var(--background-container);
+    }
+
+    .slider__arrow:hover img {
+        filter: brightness(0) invert(1);
     }
     .pagination {
         margin-top: 40px;

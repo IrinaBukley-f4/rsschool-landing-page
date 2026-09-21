@@ -79,6 +79,26 @@
         line-height: 150%;
         text-align: center;
         color: var(--text-primary);
+        display: inline-flex;            
+        align-items: center;              
+        gap: 0;                            
+        transition: gap 0.3s ease;
+    }
+    .hero__btn-icon {
+        width: 0;
+        height: 20px;                     
+        opacity: 0;
+        flex-shrink: 0;
+        transition: width 0.3s ease, opacity 0.3s ease;
+    }
+
+    .hero__btn:hover {
+        gap: 8px;
+    }
+
+    .hero__btn:hover .hero__btn-icon {
+        width: 20px;
+        opacity: 1;
     }
 }
 @media (max-width: 850px) {

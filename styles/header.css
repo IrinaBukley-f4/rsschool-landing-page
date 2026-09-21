@@ -16,8 +16,24 @@
             font-size: 16px;
             line-height: 150%;
             li {
+                position: relative;
                 a {
                     color: var(--text-primary);
+                }
+               a::after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 2px;
+                    background-color: var(--text-primary);
+                    transform: scaleX(0);
+                    transform-origin: left;
+                    transition: transform 0.3s ease;
+                }
+                a:hover::after {
+                    transform: scaleX(1);
                 }
             }
         }
@@ -40,23 +56,52 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            border-radius: 100px;
+            color: var(--text-primary);              /* базовый цвет иконки */
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .actions__color-icon {
+            fill: currentColor;                      
         }
         .actions__color-theme.active {
             border-radius: 100px;
             background-color: var(--text-accent);
         }
+        .actions__color-theme:hover {
+            background-color: var(--dark-border-primary);   
+            color: var(--text-inverse);                   
+        }
         button {
+            position: relative;
             background-color: transparent;
             border: none;
             display: flex;
             align-items: center;
             gap: 8px;
+            cursor: pointer;
             span {
                 margin-top: 3px;
                 font-weight: 600;
                 font-size: 16px;
                 line-height: 150%;
                 color: var(--text-primary);
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 2px;
+                background-color: var(--text-primary);
+                transform: scaleX(0);
+                transform-origin: left;
+                transition: transform 0.3s ease;
+            }
+
+            &:hover::after {
+                transform: scaleX(1);
             }
         }
     }
@@ -84,6 +129,7 @@
             border-radius: 100px;
             width: 44px;
             height: 44px;
+            cursor: pointer;
             span {
                 width: 18px;
                 height: 2px;
