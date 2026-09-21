@@ -1,0 +1,168 @@
+.coffee {
+    margin-top: 20px;
+    .coffee__title {
+        width: clamp(348px, 95vw, 800px);
+        margin: 0 auto;
+        font-weight: 600;
+        font-size: 60px;
+        font-family: var(--font-family);
+        line-height: 125%;
+        text-align: center;
+        color: var(--text-primary);
+        span {
+            font-style: italic;
+            color: var(--text-accent);
+        }
+    }
+    .coffee__wrapper {
+
+        &.hidden {
+            display: none
+        }
+    }
+    .tabs {
+        margin-top: 40px;
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        .tab {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-radius: 100px;
+            padding: 8px 16px 8px 8px;
+            width: 115px;
+            height: 46px;
+            background: var(--text-inverse);
+            border: 1px solid var(--border-primary);
+            transition: all 0.3s ease;
+            &.active {
+                background: var(--background-container);
+                span {
+                    color: var(--text-inverse);
+                }
+                .tab__img {
+                    background: var(--text-inverse);
+                }
+            }
+            span {
+                font-weight: 600;
+                font-size: 16px;
+                font-family: var(--font-family);
+                line-height: 150%;
+                color: var(--text-primary);
+            } 
+            .tab__img {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 30px;
+                height: 30px;
+                padding: 3px 7px;
+                border-radius: 100px;
+                background: var(--border-primary);
+                box-sizing: border-box;
+                overflow: hidden;
+                flex-shrink: 0;    
+                img {
+                     display: block;                 /* ← убирает inline-зазор */
+                    width: 100%;
+                    height: 100%;                   /* ← обязательно */
+                    object-fit: contain;    
+                }
+                &.active {
+                    background: var(--text-inverse);
+                }
+            }
+            
+        }
+        .tab:hover {
+            background: var(--background-container);
+            color: var(--text-inverse);
+            span {
+                color: var(--text-inverse);
+            }
+        }
+
+        .tab:hover .tab__img {
+            background: var(--text-inverse);
+        }
+    }
+    .coffee__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+        width: clamp(688px, 95vw, 1360px);
+        margin: 40px auto 100px;
+    }
+    .coffee__card {
+        border: 1px solid var(--border-primary);
+        border-radius: 40px;
+        width: 310px;
+        height: 506px;
+          position: relative;
+        img {
+            object-fit: cover;
+            border-radius: 40px;
+            width: 310px;
+            height: 310px;
+        }
+         .card__info {
+          
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        .coffee__card-title {
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 125%;
+            color: var(--text-primary);
+            font-family: var(--font-family);
+        }
+        .coffee__card-text {
+            margin-top: 12px;
+            font-weight: 400;
+            font-size: 16px;
+            font-family: var(--font-family);
+            line-height: 150%;
+            color: var(--text-primary);
+        }
+        .coffee__card-price {
+            font-weight: 600;
+            font-size: 24px;
+            font-family: var(--font-family);
+            line-height: 125%;
+            color: var(--text-primary);
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+        }
+       
+    }
+}
+@media (max-width: 850px) {
+	.coffee {
+        width: clamp(688px, 95vw, 1360px);
+        .coffee__card {
+            width: 310px;
+            height: 506px;
+        }
+        .coffee__wrapper {
+            width: clamp(688px, 95vw, 1360px);
+        }
+    }
+}
+@media (max-width: 640px) {
+	.coffee {
+        max-width: clamp(348px, 95vw, 688px);
+        .coffee__title {
+            font-size: 42px;
+        }
+        .coffee__wrapper {
+            max-width: clamp(348px, 95vw, 688px);
+        }
+    }
+}
