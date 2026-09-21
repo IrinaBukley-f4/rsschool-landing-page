@@ -1,0 +1,103 @@
+.hero {
+    position: relative;
+    overflow: hidden;
+    width: clamp(688px, 95vw, 1360px);
+    margin: 0 auto;
+    border-radius: 40px;
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(64, 63, 61, 0.6);
+        z-index: 1;
+        pointer-events: none;
+    }
+    .container {
+        border-radius: 40px;
+        padding: 100px;
+        position: relative;
+        z-index: 2;
+        width: 1360px;
+        overflow: hidden;
+    }
+    .video-bg {
+        border-radius: 40px;
+        position: relative;
+        z-index: 1;
+        width: 1360px;
+        overflow: hidden;
+        position: absolute;
+        inset: 0;
+        margin: 0 auto;
+        height: 100%;
+        z-index: 0;
+        overflow: hidden;
+    }
+    .video-bg video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        transform: translate(-50%, -50%);
+        object-fit: cover;
+        pointer-events: none;
+    }
+    .hero__title {
+        font-family: var(--font-family);
+        max-width: 530px;
+        font-weight: 600;
+        color: var(--text-inverse);
+        font-size: 72px;
+        line-height: 105%;
+        span {
+            font-style: italic;
+            color: var(--text-accent);
+        }
+    }
+    .hero__text {
+        font-family: var(--font-family);
+        margin-top: 40px;
+        max-width: 530px;
+        font-weight: 200;
+        font-size: 16px;
+        line-height: 150%;
+        color: var(--text-inverse);
+    }
+    .hero__btn {
+        margin-top: 40px;
+        border-radius: 100px;
+        padding: 20px 78px;
+        width: 200px;
+        height: 64px;
+        background: var(--text-inverse);
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 150%;
+        text-align: center;
+        color: var(--text-primary);
+    }
+}
+@media (max-width: 850px) {
+	.hero {
+        width: clamp(688px, 95vw, 1360px);
+        .container {
+            padding: 100px 60px;
+        }
+    }
+}
+@media (max-width: 640px) {
+	.hero {
+        max-width: clamp(348px, 95vw, 688px);
+         .container {
+            padding: 60px 16px;
+        }
+        .hero__title {
+            font-size: 42px;
+            line-height: 115%;
+        }
+    }
+}
