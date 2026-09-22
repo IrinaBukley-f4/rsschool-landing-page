@@ -101,7 +101,13 @@
         border-radius: 40px;
         width: 310px;
         height: 506px;
-          position: relative;
+        position: relative;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        &:hover {
+            box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.25);
+            transform: translateY(-5px);
+        }
         img {
             object-fit: cover;
             border-radius: 40px;

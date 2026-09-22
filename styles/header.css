@@ -105,6 +105,7 @@
             gap: 8px;
             cursor: pointer;
             span {
+                font-family: var(--font-family);
                 margin-top: 3px;
                 font-weight: 600;
                 font-size: 16px;
