@@ -33,16 +33,17 @@
             padding: 8px 16px 8px 8px;
             width: 115px;
             height: 46px;
-            background: var(--text-inverse);
-            border: 1px solid var(--border-primary);
+             background: var(--tab-bg);
+            border: 1px solid var(--tab-border);
             transition: all 0.3s ease;
             &.active {
-                background: var(--background-container);
+                 background: var(--tab-active-bg);
+                border-color: var(--tab-active-bg);
                 span {
-                    color: var(--text-inverse);
+                    color: var(--tab-active-color);
                 }
                 .tab__img {
-                    background: var(--text-inverse);
+                     background: var(--tab-border);
                 }
             }
             span {
@@ -50,7 +51,7 @@
                 font-size: 16px;
                 font-family: var(--font-family);
                 line-height: 150%;
-                color: var(--text-primary);
+                color: var(--tab-color);
             } 
             .tab__img {
                 display: flex;
@@ -71,7 +72,7 @@
                     object-fit: contain;    
                 }
                 &.active {
-                    background: var(--text-inverse);
+                     background: var(--tab-active-bg);
                 }
             }
             
@@ -80,12 +81,12 @@
             background: var(--background-container);
             color: var(--text-inverse);
             span {
-                color: var(--text-inverse);
+                 color: var(--tab-active-color);
             }
         }
 
         .tab:hover .tab__img {
-            background: var(--text-inverse);
+            background: var(--tab-active-img-bg);
         }
     }
     .coffee__wrapper {

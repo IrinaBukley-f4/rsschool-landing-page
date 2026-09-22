@@ -38,6 +38,13 @@
     --dark-bg-modal-control: var(--dark-bg-page);
     --font-family: "Inter", sans-serif;
     --second-family: "Manrope", sans-serif;
+	 --tab-bg: var(--text-inverse);            
+    --tab-color: var(--text-primary);         
+    --tab-border: var(--border-primary);
+
+    --tab-active-bg: var(--background-container);     
+    --tab-active-color: var(--text-inverse);        
+    --tab-active-img-bg: var(--text-inverse);      
 }
 body.dark {
     --text-primary: #e1d4c9;              
@@ -50,6 +57,14 @@ body.dark {
 
     --border-primary: #665f55;          
     --border-inverse: #c1b6ad;
+
+	 --tab-bg: var(--background-page);          
+    --tab-color: var(--text-primary);          
+    --tab-border: var(--border-primary);
+
+    --tab-active-bg: var(--text-primary);      
+    --tab-active-color: var(--background-page); 
+    --tab-active-img-bg: var(--background-page);
 }
 
 body {
