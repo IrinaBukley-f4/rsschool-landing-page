@@ -1,0 +1,93 @@
+@import './header.css';
+@import './hero.css';
+@import './slider.css';
+@import './about.css';
+@import './app.css';
+@import './footer.css';
+@import './coffee.css';
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	text-decoration: none;
+}
+
+:root {
+	--text-primary: #403f3d;
+	--text-inverse: #e1d4c9;
+	--text-accent: #b0907a;
+	--background-page: #e1d4c9;
+	--background-container: #665f55;
+	--background-overlay: rgba(64, 63, 61, 0.8);
+	--border-primary: #c1b6ad;
+	--border-inverse: #665f55;
+	--text-primary: #403f3d;
+	--dark-text-primary: #e1d4c9;
+	--dark-text-inverse: #e1d4c9;
+	--dark-text-accent: #b0907a;
+	--dark-bg-page: #292826;
+	--dark-bg-container: #403f3d;
+	--dark-bg-overlay: rgba(41, 40, 38, 0.8);
+	--dark-border-primary: #665f55;
+	--dark-border-inverse: #c1b6ad;
+	--background-modal: #e1d4c9;
+	--background-modalcontrol: #665f55;
+	--dark-bg-modal: var(--dark-bg-container);
+    --dark-bg-modal-control: var(--dark-bg-page);
+    --font-family: "Inter", sans-serif;
+    --second-family: "Manrope", sans-serif;
+	 --tab-bg: var(--text-inverse);            
+    --tab-color: var(--text-primary);         
+    --tab-border: var(--border-primary);
+
+    --tab-active-bg: var(--background-container);     
+    --tab-active-color: var(--text-inverse);        
+    --tab-active-img-bg: var(--text-inverse);      
+}
+body.dark {
+    --text-primary: #e1d4c9;              
+    --text-inverse: #403f3d;             
+    --text-accent: #b0907a;              
+
+    --background-page: #292826;          
+    --background-container: #403f3d;     
+    --background-overlay: rgba(41, 40, 38, 0.8);
+
+    --border-primary: #665f55;          
+    --border-inverse: #c1b6ad;
+
+	 --tab-bg: var(--background-page);          
+    --tab-color: var(--text-primary);          
+    --tab-border: var(--border-primary);
+
+    --tab-active-bg: var(--text-primary);      
+    --tab-active-color: var(--background-page); 
+    --tab-active-img-bg: var(--background-page);
+}
+
+body {
+    background-color: var(--background-page);  
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+.container {
+	max-width: clamp(688px, 95vw, 1360px);
+	margin: 0 auto;
+}
+@media (max-width: 850px) {
+	.container {
+		max-width: clamp(348px, 95vw, 688px);
+	}
+}
+@media (max-width: 380px) {
+	.container {
+		max-width: 348px;
+	}
+}

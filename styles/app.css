@@ -1,0 +1,119 @@
+.app {
+    margin-top: 100px;
+    .container {
+        display: flex;
+        gap: 100px;
+    }
+    .app__title {
+        margin-top: 144px;
+        font-weight: 600;
+        font-size: 60px;
+        line-height: 125%;
+        color: var(--text-primary);  
+        font-family: var(--font-family);
+        span {
+            font-style: italic;
+            color: var(--text-accent);
+        }
+    }
+    .app__text {
+        margin-top: 40px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        color: var(--text-primary);
+        font-family: var(--font-family);
+    }
+    .app__btns {
+        margin-top: 40px;
+        display: flex;
+        gap: 20px;
+    }
+    .app__btn {
+        border: 1px solid var(--background-container);
+        border-radius: 100px;
+        padding: 12px 20px;
+        width: 200px;
+        height: 64px;
+        display: flex;
+        gap: 8px;
+        background-color: transparent;
+        color: var(--text-primary);  
+        cursor: pointer;
+        text-decoration: none;
+        transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    }
+    .app__btn-icon {
+        flex-shrink: 0;
+        fill: currentColor;                        /* ← наследует color */
+    }
+
+    .app__btn-block {
+        font-family: var(--font-family);
+    }
+
+    .app__btn-block span:nth-child(1) {
+        display: block;
+        font-weight: 600;
+        font-size: 10px;
+        line-height: 140%;
+        color: currentColor;                       /* ← наследует color */
+        transition: color 0.3s ease;
+    }
+
+    .app__btn-block span:nth-child(2) {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 150%;
+        color: currentColor;
+        transition: color 0.3s ease;
+    }
+
+    .app__btn:hover {
+        background-color: var(--background-container);
+        border-color: var(--background-container);
+        color: var(--text-inverse);
+    }
+    .app__btn-block {
+        font-family: var(--font-family);
+    }
+    .app__img {
+        width: 630px;
+        height: 630px;
+    }
+}
+
+@media (max-width: 1190px) {
+    .app {
+        .container {
+            flex-direction: column;
+        }
+        .app__title {
+            margin-top: 0;
+        }
+       .app__img {
+            margin: 0 auto;
+        }
+    }
+}
+@media (max-width: 705px) {
+    .app {
+        .app__img {
+            width: 348px;
+            height: 348px;
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+@media (max-width: 640px) {
+    .app {
+        .app__title {
+            font-size: 32px;
+        }
+        .app__btns {
+            flex-direction: column;
+        }
+    }
+}

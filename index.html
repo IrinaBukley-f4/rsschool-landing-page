@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee House</title>
+    <link rel="icon" sizes="16x16" href="./favicon-16x16.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="#" class="logo">
+                 <!-- В светлой теме — тёмный логотип -->
+    <img src="./icons/logo.png" alt="Coffee House" class="logo__img logo__img--light">
+
+    <!-- В тёмной теме — светлый логотип -->
+    <img src="./icons/logo-dark.png" alt="Coffee House" class="logo__img logo__img--dark">
+            </a>
+            <nav class="menu">
+                <ul>
+                    <li><a href="#favorite">Favorite coffee</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#app">Mobile app</a></li>
+                    <li><a href="#contacts">Contact us</a></li>
+                </ul>
+            </nav>
+            <div class="actions">
+                <div class="actions__color">
+                    <button class="actions__color-theme active" data-theme="light" aria-label="Light theme">
+                        <svg width="22" height="22" viewBox="0 0 22 22" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 3V1C10 0.45 10.45 0 11 0C11.55 0 12 0.45 12 1V3C12 3.55 11.55 4 11 4C10.45 4 10 3.55 10 3ZM17.36 6.05L18.77 4.63C19.16 4.24 19.16 3.61 18.77 3.22C18.38 2.83 17.75 2.83 17.36 3.22L15.95 4.64C15.56 5.03 15.56 5.66 15.95 6.05C16.34 6.44 16.97 6.44 17.36 6.05ZM21 10H19C18.45 10 18 10.45 18 11C18 11.55 18.45 12 19 12H21C21.55 12 22 11.55 22 11C22 10.45 21.55 10 21 10ZM11 18C10.45 18 10 18.45 10 19V21C10 21.55 10.45 22 11 22C11.55 22 12 21.55 12 21V19C12 18.45 11.55 18 11 18ZM4.64 6.05L3.22 4.64C2.83 4.25 2.83 3.61 3.22 3.23C3.61 2.85 4.25 2.84 4.63 3.23L6.04 4.64C6.43 5.03 6.43 5.67 6.04 6.05C5.65 6.43 5.02 6.44 4.64 6.05ZM15.95 15.95C15.56 16.34 15.56 16.98 15.95 17.36L17.36 18.77C17.75 19.16 18.39 19.16 18.77 18.77C19.16 18.38 19.16 17.74 18.77 17.36L17.36 15.95C16.98 15.56 16.34 15.56 15.95 15.95ZM1 12H3C3.55 12 4 11.55 4 11C4 10.45 3.55 10 3 10H1C0.45 10 0 10.45 0 11C0 11.55 0.45 12 1 12ZM4.64 18.78L6.05 17.37C6.44 16.98 6.44 16.34 6.05 15.96C5.66 15.58 5.02 15.57 4.64 15.96L3.23 17.37C2.84 17.76 2.84 18.4 3.23 18.78C3.61 19.17 4.25 19.17 4.64 18.78ZM11 5C7.69 5 5 7.69 5 11C5 14.31 7.69 17 11 17C14.31 17 17 14.31 17 11C17 7.69 14.31 5 11 5Z" />
+                        </svg>
+                    </button>
+                    <button class="actions__color-theme" data-theme="dark" aria-label="Dark theme">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 0C4.03 0 0 4.03 0 9C0 13.97 4.03 18 9 18C13.97 18 18 13.97 18 9C18 8.54 17.96 8.08 17.9 7.64C16.92 9.01 15.32 9.9 13.5 9.9C10.52 9.9 8.1 7.48 8.1 4.5C8.1 2.69 8.99 1.08 10.36 0.0999999C9.92 0.0399999 9.46 0 9 0Z" />
+                        </svg>
+                    </button>
+                </div>
+                <a href="./coffee.html">
+                    <span>Menu</span> 
+                    <img src="./icons/coffee-cup.png" alt="coffe-cup">
+                </a>
+                 <div class="burger">
+                    <span></span><span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="video-bg">
+                <video autoplay muted loop playsinline>
+                    <source src="./video.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="container">
+                <h1 class="hero__title"><span>Enjoy</span> premium coffee at our charming cafe</h1>
+                <p class="hero__text">With its inviting atmosphere and delicious coffee options, the Coffee House Resource is a popular destination for coffee lovers and those seeking a warm and inviting space to enjoy their favorite beverage.</p>
+                <a href="./coffee.html" class="hero__btn">Menu  <img src="./icons/coffee-cup.png" alt="coffee-cup" class="hero__btn-icon"></a>
+            </div>
+        </section>
+        <section class="slider" id="favorite">
+            <div class="container">
+                <h2 class="slider__title">Choose your <span>favorite</span> coffee</h2>
+                <div class="slider__wrapper">
+                    <div class="arrow__left slider__arrow"><img src="./icons/arrow-left.svg" alt="left"></div>
+                    <div class="slider__content">
+                        <div class="slide">
+                            <div class="slide__img">
+                                <img src="./images/slider/coffee-slider-1.png" alt="slide">
+                            </div>
+                            <h3 class="slide__title">S’mores Frappuccino</h3>
+                            <p class="slide__text">This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped with oat milk.</p>
+                            <span class="slide__price">$5.50</span>
+                        </div>
+                        <div class="slide hidden">
+                           <img src="./images/slider/coffee-slider-2.png" alt="slide">
+                            <h3 class="slide__title">S’mores Frappuccino</h3>
+                            <p class="slide__text">This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped with oat milk.</p>
+                            <span class="slide__price">$5.50</span>
+                        </div>
+                        <div class="slide hidden">
+                            <img src="./images/slider/coffee-slider-3.png" alt="slide">
+                            <h3 class="slide__title">S’mores Frappuccino</h3>
+                            <p class="slide__text">This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped with oat milk.</p>
+                            <span class="slide__price">$5.50</span>
+                        </div>
+                    </div>
+                    <div class="arrow__right slider__arrow"><img src="./icons/arrow-right.svg" alt="right"></div>
+                </div>
+                <div class="pagination">
+                    <div class="dot active"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+        </section>
+        <section class="about" id="about">
+            <div class="container">
+                <h2 class="about__title">Resource is <span>the perfect and cozy place</span> where you can enjoy a variety of hot beverages, relax, catch up with friends, or get some work done.</h2>
+                <div class="about__wrapper">
+                    <div class="about__img about__img--left-top"><img src="./images/about/about-1.jpg" alt="about"></div>
+                    <div class="about__img about__img--left-bottom"><img src="./images/about/about-2.jpg" alt="about"></div>
+                    <div class="about__img about__img--right-top"><img src="./images/about/about-3.jpg" alt="about"></div>
+                    <div class="about__img about__img--right-bottom"><img src="./images/about/about-4.jpg" alt="about"></div>
+                </div>
+            </div>
+        </section>
+        <section class="app" id="app">
+            <div class="container">
+                <div class="app__descr">
+                    <h2 class="app__title"> <span>Download</span> our app to start ordering</h2>
+                    <p class="app__text">Download the Resource app today and experience the comfort of ordering your favorite coffee from wherever you are</p>
+                   <div class="app__btns">
+                     <a href="#" class="app__btn">
+                        <svg width="27" height="32" viewBox="0 0 27 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22.0578 16.8306C22.021 12.8323 25.4156 10.8871 25.5708 10.7966C23.6483 8.06361 20.6684 7.69021 19.6213 7.66043C17.1185 7.40364 14.6909 9.12057 13.4159 9.12057C12.1156 9.12057 10.1523 7.68524 8.03638 7.72742C5.31352 7.76836 2.76624 9.30541 1.36919 11.6922C-1.51399 16.5589 0.636305 23.7107 3.39861 27.6446C4.7804 29.5711 6.39503 31.7223 8.50843 31.6466C10.576 31.5635 11.3483 30.3614 13.8435 30.3614C16.3157 30.3614 17.0409 31.6466 19.1963 31.5982C21.4153 31.5635 22.8124 29.6629 24.1458 27.719C25.7426 25.5108 26.3839 23.3361 26.4093 23.2245C26.3572 23.2071 22.0998 21.6229 22.0578 16.8306Z"/>
+                            <path d="M17.9863 5.07263C19.0983 3.71671 19.8592 1.872 19.648 0C18.0384 0.0694711 16.0256 1.08549 14.8664 2.41164C13.8409 3.58025 12.9248 5.49566 13.1615 7.29695C14.9695 7.42845 16.8259 6.40747 17.9863 5.07263Z"/>
+                        </svg>
+                        <div class="app__btn-block">
+                            <span>Available on the</span>
+                            <span>App Store</span>
+                        </div>
+                    </a>
+                    <a href="#" class="app__btn">
+                        <svg width="31" height="33" viewBox="0 0 31 33" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.572202 1.40304C0.209755 1.77297 0 2.34891 0 3.09478V29.6995C0 30.4453 0.209755 31.0213 0.572202 31.3912L0.661658 31.4724L15.9523 16.5701V16.2182L0.661658 1.31582L0.572202 1.40304Z"/>
+                            <path d="M22.894 21.54L17.8027 16.57V16.2181L22.9001 11.2482L23.0143 11.3128L29.0509 14.6617C30.7737 15.6121 30.7737 17.176 29.0509 18.1324L23.0143 21.4753L22.894 21.54Z"/>
+                            <path d="M22.0897 22.4008L16.8781 17.3195L1.49805 32.3166C2.07025 32.9031 3.00336 32.9738 4.06448 32.3873L22.0897 22.4008Z"/>
+                            <path d="M22.0897 10.3875L4.06448 0.400985C3.00336 -0.17947 2.07025 -0.108795 1.49805 0.477675L16.8781 15.4688L22.0897 10.3875Z" />
+                        </svg>
+                        <div class="app__btn-block">
+                            <span>Available on</span>
+                            <span>Google Play</span>
+                        </div>
+                    </a>
+                   </div>
+                </div>
+                <div class="app__img"><img src="./images/mobile-screens.png" alt="mobile-screens"></div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer" id="contacts">
+        <div class="container">
+            <div class="footer__left">
+                <h2 class="footer__title">Sip, Savor, Smile. <span>It’s coffee time!</span></h2>
+                <div class="footer__social">
+                    <a href="https://x.com/" class="footer__social-icon" target="_blank"><img src="./icons/twitter.svg" alt="twitter"></a>
+                    <a href="https://www.instagram.com" class="footer__social-icon" target="_blank"><img src="./icons/instagram.svg" alt="instagram"></a>
+                    <a href="https://www.facebook.com/" class="footer__social-icon" target="_blank"><img src="./icons/facebook.svg" alt="facebook"></a>
+                </div>
+            </div>
+            <div class="footer__right">
+                <h3 class="footer__contact-title">Contact us</h3>
+                <ul class="footer__contact-links">
+                    <li><a href="https://maps.app.goo.gl/YzixhGL63M3KAHYe9" target="_blank"><img src="./icons/pin-alt.png" alt="pin-alt"> 8558 Green Rd.,  LA</a></li>
+                    <li><a href="tel:+16035550123" target="_blank"><img src="./icons/phone.png" alt="phone"> +1 (603) 555-0123</a></li>
+                    <li><img src="./icons/clock.png" alt=""> Mon–Sat: 9:00–23:00</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+</html>
