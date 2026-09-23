@@ -1,9 +1,9 @@
 .footer {
-    width: clamp(688px, 95vw, 1360px);
+    width: clamp(348px, 95vw, 1360px);
     margin: 100px auto 40px;
     border-radius: 40px;
     padding: 100px;
-      background: var(--background-container);
+    background: var(--background-container);
     transition: background-color 0.3s ease;
     .container {
         display: flex;
@@ -118,12 +118,12 @@
 @media (max-width: 850px) {
     .footer {
         padding: 100px 60px;
-        width: clamp(688px, 95vw, 1360px);
+        /* width: clamp(688px, 95vw, 1360px); */
     }
 }
 @media (max-width: 640px) {
     .footer {
-        max-width: clamp(348px, 95vw, 688px);
+        /* max-width: clamp(348px, 95vw, 688px); */
         padding: 60px 16px;
        .container {
             gap: 40px;

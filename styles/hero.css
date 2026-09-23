@@ -24,7 +24,7 @@
         border-radius: 40px;
         position: relative;
         z-index: 1;
-        width: 1360px;
+        width: clamp(348px, 95vw, 1360px);
         overflow: hidden;
         position: absolute;
         inset: 0;
