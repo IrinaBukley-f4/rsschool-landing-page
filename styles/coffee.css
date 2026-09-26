@@ -160,8 +160,7 @@
             z-index: 6;
             border-radius: 40px;
             padding: 16px;
-            max-width: 800px;
-             /* height: 504px; */
+            width: clamp(342px, 90vw, 800px);
             background: var(--text-inverse);
             display: flex;
             gap: 20px;
@@ -181,12 +180,14 @@
             height: 308px;
             border-radius: 40px;
             overflow: hidden;
+            object-fit: cover;
             img {
                 width: 100%;
+            border-radius: 40px;
             }
         }
         .modal__descr {
-            width: 57%;
+            max-width: 57%;
             .coffee__card-text {
                 margin-top: 12px;
             }
@@ -198,7 +199,9 @@
                 color: var(--text-primary);
             }
             .coffee__card-add {
+                margin-top: 8px;
                 display: flex;
+                flex-wrap: wrap;
                 gap: 8px;
                 button {
                     border: 1px solid var(--border-primary);
@@ -270,6 +273,7 @@
             color: var(--text-primary);
             text-transform: capitalize;
             background-color: transparent;
+            cursor: pointer;
         }
     }   
 }
@@ -280,6 +284,14 @@
             width: 310px;
             height: 506px;
         }
+        .modal {
+            .modal__descr {
+                max-width: 50%;
+            }
+            .modal__img {
+                height: fit-content;
+            }
+        }
     }
 }
 @media (max-width: 640px) {
@@ -287,6 +299,14 @@
         max-width: clamp(348px, 95vw, 688px);
         .coffee__title {
             font-size: 42px;
+        }
+        .modal {
+            .modal__descr {
+                max-width: 100%;
+            }
+            .modal__img {
+                display: none;
+            }
         }
     }
 }
