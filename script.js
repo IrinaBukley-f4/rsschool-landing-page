@@ -78,38 +78,98 @@ function showModal (product, i) {
     document.querySelector('.modal').classList.remove('hidden');
     modalContentEl.innerHTML = '';
     modalContentEl.innerHTML = `
-        <div class="modal__img"><img src="./images/${product.category}/${product.category}-${+i+1}.png" alt="${product.category}"></div>
+        <div class="modal__img">
+            <img src="./images/${product.category}/${product.category}-${+i+1}.png" alt="${product.category}">
+        </div>
         <div class="modal__descr">
             <h2 class="coffee__card-title">${product.name}</h2>
             <p class="coffee__card-text">${product.description}</p>
+            
             <h3 class="coffee__card-subtitle">Size</h3>
-            <div class="coffee__card-add">
-                <button class="active"><span>S</span>${product.sizes.s.size}</button>
-                <button><span>M</span>${product.sizes.m.size}</button>
-                <button><span>L</span>${product.sizes.l.size}</button>
+            <div class="coffee__card-add" data-type="size">
+                <button class="active" data-size="s" data-price="${product.sizes.s['add-price']}">
+                    <span>S</span>${product.sizes.s.size}
+                </button>
+                <button data-size="m" data-price="${product.sizes.m['add-price']}">
+                    <span>M</span>${product.sizes.m.size}
+                </button>
+                <button data-size="l" data-price="${product.sizes.l['add-price']}">
+                    <span>L</span>${product.sizes.l.size}
+                </button>
             </div>
+            
             <h3 class="coffee__card-subtitle">Additives</h3>
-            <div class="coffee__card-add">
-                <button><span>1</span>${product.additives[0].name}</button>
-                <button><span>2</span>${product.additives[1].name}</button>
-                <button><span>3</span>${product.additives[2].name}</button>
+            <div class="coffee__card-add" data-type="additive">
+                ${product.additives.map((add, idx) => `
+                    <button data-additive="${idx}" data-price="${add['add-price']}">
+                        <span>${idx + 1}</span>${add.name}
+                    </button>
+                `).join('')}
             </div>
+            
             <div class="coffee__card-total">
                 <h3>Total:</h3>
-                <span>$${product.price}</span>
+                <span class="modal__price">$${product.price}</span>
             </div>
+            
             <div class="coffee__card-info">
                 <img src="./icons/info-empty.png" alt="info">
-                <span>The cost is not final. Download our mobile app to see the final price and place your order. Earn loyalty points and enjoy your favorite coffee with up to 20% discount.</span>
+                <span>The cost is not final...</span>
             </div>
+            
             <button class="modal__close">close</button>
         </div>
     `;
+    initPriceCalculator(product);
 }
 
 function closeModal () {
     document.querySelector('.modal').classList.add('hidden');
     document.body.style.overflow = '' 
+}
+
+// additives && new price
+
+function initPriceCalculator(product) {
+    const basePrice = parseFloat(product.price);
+    const sizeButtons = modalContentEl.querySelectorAll('[data-type="size"] button');
+    const additiveButtons = modalContentEl.querySelectorAll('[data-type="additive"] button');
+    const priceEl = modalContentEl.querySelector('.modal__price');
+    
+    function updatePrice() {
+        let total = basePrice;
+        
+        sizeButtons.forEach(btn => {
+            if (btn.classList.contains('active')) {
+                total += parseFloat(btn.dataset.price) || 0;
+            }
+        });
+        
+        additiveButtons.forEach(btn => {
+            if (btn.classList.contains('active')) {
+                total += parseFloat(btn.dataset.price) || 0;
+            }
+        });
+        
+        priceEl.textContent = `$${total.toFixed(2)}`;
+    }
+    
+    sizeButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            sizeButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            updatePrice();
+        });
+    });
+    
+    additiveButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            btn.classList.toggle('active');
+            updatePrice();
+        });
+    });
+    
+    updatePrice();
 }
 
 // menu burger
@@ -202,9 +262,6 @@ window.addEventListener('resize', () => {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(() => goToSlide(currentIndex), 100);
 });
-
-// additives && new price
-
 
 // theme
 
