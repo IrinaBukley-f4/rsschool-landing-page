@@ -1,5 +1,5 @@
 .coffee {
-    margin: 20px auto 0;
+    margin: 100px auto 0;
     .coffee__title {
         max-width: clamp(348px, 95vw, 800px);
         margin: 0 auto;

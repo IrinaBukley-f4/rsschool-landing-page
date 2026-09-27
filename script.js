@@ -52,7 +52,7 @@ tabsEls && tabsEls.forEach(tab => {
 
 // modal window
 
-wrapperEl.addEventListener('click', (e) => {
+wrapperEl && wrapperEl.addEventListener('click', (e) => {
     const card = e.target.closest('.coffee__card');
     if (!card) return;
 
@@ -65,12 +65,12 @@ wrapperEl.addEventListener('click', (e) => {
     showModal(product, index);
 });
 
-modalContentEl.addEventListener('click', (e) => {
+modalContentEl && modalContentEl.addEventListener('click', (e) => {
     if (e.target.closest('.modal__close')) {
         closeModal();
     }
 });
-overlayEl.addEventListener('click', () => {
+overlayEl && overlayEl.addEventListener('click', () => {
     closeModal();
 });
 function showModal (product, i) {
@@ -112,6 +112,48 @@ function closeModal () {
 
 // menu burger
 
+const burgerEl = document.getElementById('burger');
+const burgerCoffeeEl = document.getElementById('burger-coffee');
+const mobileMenuEl = document.getElementById('mobileMenu');
+const MOBILE_BREAKPOINT = 850;
+
+function toggleMenu() {
+    burgerEl?.classList.toggle('active');
+    burgerCoffeeEl?.classList.toggle('active');
+    mobileMenuEl.classList.toggle('active');
+    burgerEl?.classList.contains('active') 
+        ? document.body.style.overflow = 'hidden' 
+        : document.body.style.overflow = '';
+    burgerCoffeeEl?.classList.contains('active') 
+        ? document.body.style.overflow = 'hidden' 
+        : document.body.style.overflow = '';
+}
+
+function closeMenu() {
+    burgerEl?.classList.remove('active');
+    burgerCoffeeEl?.classList.remove('active');
+    mobileMenuEl.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+burgerEl?.addEventListener('click', toggleMenu);
+burgerCoffeeEl?.addEventListener('click', toggleMenu);
+
+mobileMenuEl?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMenu);
+    document.body.style.overflow = '';
+});
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMenu();
+    document.body.style.overflow = '';
+});
+
+window.addEventListener('resize', () => {
+    if (window.innerWidth > MOBILE_BREAKPOINT) {
+        closeMenu();
+    }
+});
 
 // pagination
 
