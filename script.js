@@ -1,11 +1,19 @@
 // render cards
-let allProducts = [];
 const wrapperEl = document.querySelector('.coffee__wrapper');
 const tabsEls = document.querySelectorAll('.tab');
 const modalEl = document.querySelector('.modal');
 const closeModalEl = document.querySelector('.modal__close');
 const overlayEl = document.querySelector('.modal__overlay');
 const modalContentEl = document.querySelector('.modal__content');
+const refreshEl = document.querySelector('.refresh');
+
+let allProducts = [];
+const MOBILE_BREAKPOINT_PAG = 850;
+const CARDS_PER_PAGE = 4;
+
+let currentCategory = 'coffee';
+let visibleCount = CARDS_PER_PAGE;
+
 
 async function getData() {
     const res = await fetch('./products.json');
@@ -17,12 +25,21 @@ async function init() {
     renderCards('coffee');
 }
 
-function renderCards(cat) {
-    const fileredProds = allProducts.filter(item => item.category === cat);
+function renderCards(cat, resetPagination = true) {
     if (!wrapperEl) return;
+
+    currentCategory = cat;
+    if (resetPagination) visibleCount = CARDS_PER_PAGE;
+    const fileredProds = allProducts.filter(item => item.category === cat);
+
+    const isMobile = window.innerWidth <= MOBILE_BREAKPOINT;
+    const productsToShow = isMobile 
+        ? fileredProds.slice(0, visibleCount)
+        : fileredProds;
+    
     wrapperEl.innerHTML = '';
 
-    fileredProds.forEach((prod, index) => {
+    productsToShow.forEach((prod, index) => {
         const card = document.createElement('div');
         card.className = 'coffee__card';
         card.dataset.index = index; 
@@ -38,8 +55,10 @@ function renderCards(cat) {
                </div>
         `;
         wrapperEl.appendChild(card);
-    })
+    });
+    updateRefreshButton(fileredProds.length);
 }
+
 init();
 
 tabsEls && tabsEls.forEach(tab => {
@@ -49,6 +68,23 @@ tabsEls && tabsEls.forEach(tab => {
         renderCards(e.currentTarget.id);
     })
 });
+
+// pagination
+
+refreshEl?.addEventListener('click', () => {
+    visibleCount += CARDS_PER_PAGE;  
+    renderCards(currentCategory, false);
+});
+
+function updateRefreshButton(totalCount) {
+    const refreshEl = document.querySelector('.refresh');
+    if (!refreshEl) return;
+    
+    const isMobile = window.innerWidth <= MOBILE_BREAKPOINT_PAG;
+    const hasMore = visibleCount < totalCount;
+    
+    refreshEl.classList.toggle('hidden', !isMobile || !hasMore);
+}
 
 // modal window
 
@@ -211,15 +247,6 @@ document.addEventListener('keydown', (e) => {
     document.body.style.overflow = '';
 });
 
-window.addEventListener('resize', () => {
-    if (window.innerWidth > MOBILE_BREAKPOINT) {
-        closeMenu();
-    }
-});
-
-// pagination
-
-
 //slider
 
 const contentEl = document.querySelector('.slider__content');
@@ -258,9 +285,20 @@ if (contentEl && slides.length > 0) {
 }
 
 let resizeTimer;
+let resizeCardsTimer;
+
 window.addEventListener('resize', () => {
+    if (window.innerWidth > MOBILE_BREAKPOINT) {
+        closeMenu();
+    }
+
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(() => goToSlide(currentIndex), 100);
+
+    clearTimeout(resizeCardsTimer);
+    resizeCardsTimer = setTimeout(() => {
+        renderCards(currentCategory, false);
+    }, 200);
 });
 
 // theme
