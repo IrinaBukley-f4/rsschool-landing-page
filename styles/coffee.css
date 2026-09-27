@@ -1,5 +1,6 @@
 .coffee {
     margin: 100px auto 0;
+    width: clamp(688px, 95vw, 1360px);
     .coffee__title {
         max-width: clamp(348px, 95vw, 800px);
         margin: 0 auto;
@@ -236,11 +237,11 @@
                         background: var(--border-primary);
                     }
                     &.active {
-                        color: var(--text-inverse);
-                        background: var(--background-container);
+                        color: var(--additive-active-color);
+                        background: var(--additive-active-bg);
                         span {
-                            background: var(--text-inverse);
-                            color: var(--text-primary);
+                            background: var(--additive-active-circle-bg);
+                            color: var(--additive-active-circle-color);
                         }
                     }
                 }
@@ -272,7 +273,7 @@
         }
         .modal__close {
             margin-top: 30px;
-            border: 1px solid var(--background-container);
+            border: 1px solid var(--border-control);
             border-radius: 100px;
             padding: 10px 78px;
             width: 100%;
@@ -290,7 +291,26 @@
 }
 @media (max-width: 850px) {
 	.coffee {
+        .coffee__card {
+            width: 310px;
+            height: 506px;
+        }
+        .modal {
+            .modal__descr {
+                max-width: 50%;
+            }
+            .modal__img {
+                height: fit-content;
+            }
+        }
+    }
+}
+@media (max-width: 768px) {
+	.coffee {
         width: clamp(688px, 95vw, 1360px);
+        .coffee__wrapper {
+            gap: 35px;
+        }
         .coffee__card {
             width: 310px;
             height: 506px;

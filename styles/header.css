@@ -135,6 +135,9 @@
             &:hover::after {
                 transform: scaleX(1);
             }
+            img {
+                filter: var(--icon-filter);
+            }
         }
     }
     .burger {
@@ -188,6 +191,9 @@
     color: var(--text-primary);
     text-decoration: none;
     transition: color 0.3s ease;
+    img {
+         filter: var(--icon-filter);
+    }
 }
 
 .mobile-menu a:hover {
@@ -248,7 +254,7 @@ body.dark .logo__img--dark  { opacity: 1; }
             span {
                 width: 18px;
                 height: 2px;
-                background-color: var(--background-container);
+                background-color: var(--icon-color);
                 transition: transform 0.3s ease, opacity 0.3s ease;
                 transform-origin: center;
             }

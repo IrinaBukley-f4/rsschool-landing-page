@@ -8,7 +8,7 @@ const modalContentEl = document.querySelector('.modal__content');
 const refreshEl = document.querySelector('.refresh');
 
 let allProducts = [];
-const MOBILE_BREAKPOINT_PAG = 850;
+const MOBILE_BREAKPOINT = 768;
 const CARDS_PER_PAGE = 4;
 
 let currentCategory = 'coffee';
@@ -80,7 +80,7 @@ function updateRefreshButton(totalCount) {
     const refreshEl = document.querySelector('.refresh');
     if (!refreshEl) return;
     
-    const isMobile = window.innerWidth <= MOBILE_BREAKPOINT_PAG;
+    const isMobile = window.innerWidth <= MOBILE_BREAKPOINT;
     const hasMore = visibleCount < totalCount;
     
     refreshEl.classList.toggle('hidden', !isMobile || !hasMore);
@@ -150,7 +150,7 @@ function showModal (product, i) {
             
             <div class="coffee__card-info">
                 <img src="./icons/info-empty.png" alt="info">
-                <span>The cost is not final...</span>
+                <span>The cost is not final. Download our mobile app to see the final price and place your order. Earn loyalty points and enjoy your favorite coffee with up to 20% discount.</span>
             </div>
             
             <button class="modal__close">close</button>
@@ -213,7 +213,6 @@ function initPriceCalculator(product) {
 const burgerEl = document.getElementById('burger');
 const burgerCoffeeEl = document.getElementById('burger-coffee');
 const mobileMenuEl = document.getElementById('mobileMenu');
-const MOBILE_BREAKPOINT = 768;
 
 function toggleMenu() {
     burgerEl?.classList.toggle('active');
