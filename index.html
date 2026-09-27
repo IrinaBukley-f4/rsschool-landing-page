@@ -77,35 +77,37 @@
             <div class="container">
                 <h2 class="slider__title">Choose your <span>favorite</span> coffee</h2>
                 <div class="slider__wrapper">
-                    <div class="arrow__left slider__arrow"><img src="./icons/arrow-left.svg" alt="left"></div>
-                    <div class="slider__content">
-                        <div class="slide">
-                            <div class="slide__img">
-                                <img src="./images/slider/coffee-slider-1.png" alt="slide">
+                    <button class="arrow__left slider__arrow" aria-label="Previous slide"><img src="./icons/arrow-left.svg" alt="left"></button>
+                    <div class="slider__container">
+                        <div class=" slider__content">
+                            <div class="slide">
+                                <div class="slide__img">
+                                    <img src="./images/slider/coffee-slider-1.png" alt="slide">
+                                </div>
+                                <h3 class="slide__title">S’mores Frappuccino</h3>
+                                <p class="slide__text">This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped with oat milk.</p>
+                                <span class="slide__price">$5.50</span>
                             </div>
-                            <h3 class="slide__title">S’mores Frappuccino</h3>
-                            <p class="slide__text">This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped with oat milk.</p>
-                            <span class="slide__price">$5.50</span>
-                        </div>
-                        <div class="slide hidden">
-                           <img src="./images/slider/coffee-slider-2.png" alt="slide">
-                            <h3 class="slide__title">S’mores Frappuccino</h3>
-                            <p class="slide__text">This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped with oat milk.</p>
-                            <span class="slide__price">$5.50</span>
-                        </div>
-                        <div class="slide hidden">
-                            <img src="./images/slider/coffee-slider-3.png" alt="slide">
-                            <h3 class="slide__title">S’mores Frappuccino</h3>
-                            <p class="slide__text">This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped with oat milk.</p>
-                            <span class="slide__price">$5.50</span>
+                            <div class="slide">
+                            <img src="./images/slider/coffee-slider-2.png" alt="slide">
+                                <h3 class="slide__title">S’mores Frappuccino</h3>
+                                <p class="slide__text">This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped with oat milk.</p>
+                                <span class="slide__price">$5.50</span>
+                            </div>
+                            <div class="slide">
+                                <img src="./images/slider/coffee-slider-3.png" alt="slide">
+                                <h3 class="slide__title">S’mores Frappuccino</h3>
+                                <p class="slide__text">This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped with oat milk.</p>
+                                <span class="slide__price">$5.50</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="arrow__right slider__arrow"><img src="./icons/arrow-right.svg" alt="right"></div>
+                    <button class="arrow__right slider__arrow" aria-label="Next slide"><img src="./icons/arrow-right.svg" alt="right"></button>
                 </div>
                 <div class="pagination">
-                    <div class="dot active"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
+                    <button class="dot active"  data-index="0" aria-label="Slide 1"></button>
+                    <button class="dot" data-index="1" aria-label="Slide 2"></button>
+                    <button class="dot" data-index="2" aria-label="Slide 3"></button>
                 </div>
             </div>
         </section>

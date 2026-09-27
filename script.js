@@ -74,6 +74,7 @@ overlayEl && overlayEl.addEventListener('click', () => {
     closeModal();
 });
 function showModal (product, i) {
+    document.body.style.overflow = 'hidden' 
     document.querySelector('.modal').classList.remove('hidden');
     modalContentEl.innerHTML = '';
     modalContentEl.innerHTML = `
@@ -108,6 +109,7 @@ function showModal (product, i) {
 
 function closeModal () {
     document.querySelector('.modal').classList.add('hidden');
+    document.body.style.overflow = '' 
 }
 
 // menu burger
@@ -160,7 +162,46 @@ window.addEventListener('resize', () => {
 
 //slider
 
+const contentEl = document.querySelector('.slider__content');
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.dot');
+const arrowPrevEl = document.querySelector('.arrow__left');
+const arrowNextEl = document.querySelector('.arrow__right');
 
+let currentIndex = 0;
+
+function goToSlide(index) {
+    if (!contentEl || slides.length === 0) return;
+    
+    if (index < 0) index = slides.length - 1;
+    if (index >= slides.length) index = 0;
+    
+    currentIndex = index;
+    
+    const slideWidth = slides[0].offsetWidth;
+    const gap = parseInt(getComputedStyle(contentEl).gap) || 0;
+    
+    contentEl.style.transform = `translateX(-${currentIndex * (slideWidth + gap)}px)`;
+    
+    dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
+}
+
+if (contentEl && slides.length > 0) {
+    arrowNextEl?.addEventListener('click', () => goToSlide(currentIndex + 1));
+    arrowPrevEl?.addEventListener('click', () => goToSlide(currentIndex - 1));
+    
+    dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+            goToSlide(Number(dot.dataset.index));
+        });
+    });
+}
+
+let resizeTimer;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => goToSlide(currentIndex), 100);
+});
 
 // additives && new price
 

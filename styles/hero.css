@@ -1,14 +1,14 @@
 .hero {
     position: relative;
     overflow: hidden;
-    width: clamp(688px, 95vw, 1360px);
+    width: clamp(348px, 95vw, 1360px);
     margin: 100px auto 0;
     border-radius: 40px;
     &::before {
         content: "";
         position: absolute;
         inset: 0;
-       background: var(--background-overlay);
+        background: var(--background-overlay);
         z-index: 1;
         pointer-events: none;
     }
@@ -103,7 +103,6 @@
 }
 @media (max-width: 850px) {
 	.hero {
-        width: clamp(688px, 95vw, 1360px);
         .container {
             padding: 100px 60px;
         }
@@ -111,7 +110,6 @@
 }
 @media (max-width: 640px) {
 	.hero {
-        max-width: clamp(348px, 95vw, 688px);
          .container {
             padding: 60px 16px;
         }

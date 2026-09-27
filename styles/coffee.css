@@ -15,7 +15,7 @@
         }
     }
     .coffee__wrapper {
-        width: clamp(348px, 80vw, 1360px);
+        width: clamp(348px, 86vw, 1360px);
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
