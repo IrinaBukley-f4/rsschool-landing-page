@@ -206,12 +206,25 @@
 
 body.dark .logo__img--light { opacity: 0; }
 body.dark .logo__img--dark  { opacity: 1; }
-@media (min-width: 851px) {
+
+@media (max-width: 850px) {
+    .header {
+        .menu {
+            ul {
+                flex-wrap: wrap;
+                column-gap: 40px;
+                row-gap: 10px;
+            }
+        }
+        
+    }
+}
+@media (min-width: 769px) {
     .mobile-menu {
         display: none;
     }
 }
-@media (max-width: 850px) {
+@media (max-width: 768px) {
     .header {
         .actions {
             a {

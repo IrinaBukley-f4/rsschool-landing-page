@@ -115,7 +115,7 @@ function closeModal () {
 const burgerEl = document.getElementById('burger');
 const burgerCoffeeEl = document.getElementById('burger-coffee');
 const mobileMenuEl = document.getElementById('mobileMenu');
-const MOBILE_BREAKPOINT = 850;
+const MOBILE_BREAKPOINT = 768;
 
 function toggleMenu() {
     burgerEl?.classList.toggle('active');
@@ -161,7 +161,8 @@ window.addEventListener('resize', () => {
 //slider
 
 
-// фadditives && new price
+
+// additives && new price
 
 
 // theme
